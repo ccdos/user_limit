@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_user_limit_user_limit,user_limit.user_limit,model_user_limit_user_limit,base.group_user,1,1,1,1
+"access_res_users_group_super_manager","res_users group_super_manager","base.model_res_users","user_limit.groups_super_user",1,1,1,1

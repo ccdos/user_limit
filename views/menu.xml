@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_user_limit_root" name="配置" sequence="99"
+        groups="user_limit.groups_super_user"
+    />
+
+    <menuitem id="menu_user_manager" name="用户"
+        parent="menu_user_limit_root"
+        action="base.action_res_users"
+        groups="user_limit.groups_super_user"
+        sequence="1"/>
+
+</odoo>

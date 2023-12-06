@@ -1,0 +1,34 @@
+<odoo>
+    <data noupdate="1">
+        <record model="res.groups" id="groups_super_user">
+            <field name="name">Super User Group</field>
+            <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record model="res.groups" id="hide_app_menu">
+            <field name="name">Hide Menu Group</field>
+            <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+        </record>
+
+        <record model="res.partner" id="partner_super">
+            <field name="name">Super User</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="email">super@example.com</field>
+        </record>
+
+        <!-- user super 用户管理 -->
+        <record id="user_admin" model="res.users">
+            <field name="login">super</field>
+            <field name="password">super</field>
+            <field name="partner_id" ref="user_limit.partner_super"/>
+            <field name="groups_id"   eval="[(4,ref('user_limit.groups_super_user'))]"/>
+        </record>
+
+        <!--  将APPs菜单添加到 hide_app_menu 组, 使得只有这个组才能看到 apps 菜单    -->
+        <record id="base.menu_management" model="ir.ui.menu">
+            <field name="groups_id" eval="[(4,ref('user_limit.hide_app_menu'))]"/>
+        </record>
+
+    </data>
+</odoo>

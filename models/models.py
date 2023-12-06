@@ -25,3 +25,19 @@ class ResUsers(models.Model):
         if existing_users_count >= users_counts_limit:
             raise ValidationError(_('User creation is not allowed due to user limit.'))
         return super(ResUsers, self).create(vals)
+
+
+class GroupsView(models.Model):
+    _inherit = 'res.groups'
+
+    @api.model
+    def get_application_groups(self, domain):
+        # 重载, 隐藏 系统管理 base.group_erp_manager 和系统设置用户组base.group_system, 使得用户页面不能出现无法授权
+        group_erp_manager = self.env.ref('base.group_erp_manager', raise_if_not_found=False)
+        if (group_erp_manager and
+                group_erp_manager.category_id.xml_id == 'base.module_category_administration_administration'):
+            domain += [('id', '!=', group_erp_manager.id)]
+        group_system = self.env.ref('base.group_system', raise_if_not_found=False)
+        if group_system and group_system.category_id.xml_id == 'base.module_category_administration_administration':
+            domain += [('id', '!=', group_system.id)]
+        return super().get_application_groups(domain)
