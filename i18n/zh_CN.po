@@ -1,0 +1,78 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* user_limit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-06 15:44+0000\n"
+"PO-Revision-Date: 2023-12-06 23:48+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.2.2\n"
+
+#. module: user_limit
+#: model:ir.model,name:user_limit.model_res_groups
+msgid "Access Groups"
+msgstr ""
+
+#. module: user_limit
+#: model:ir.model,name:user_limit.model_res_partner
+msgid "Contact"
+msgstr "联系人"
+
+#. module: user_limit
+#: model:res.groups,name:user_limit.hide_app_menu
+msgid "Hide Menu Group"
+msgstr "隐藏菜单组"
+
+#. module: user_limit
+#: model:ir.model.fields,field_description:user_limit.field_res_partner__signup_expiration
+#: model:ir.model.fields,field_description:user_limit.field_res_users__signup_expiration
+msgid "Signup Expiration"
+msgstr ""
+
+#. module: user_limit
+#: model:ir.model.fields,field_description:user_limit.field_res_partner__signup_token
+#: model:ir.model.fields,field_description:user_limit.field_res_users__signup_token
+msgid "Signup Token"
+msgstr ""
+
+#. module: user_limit
+#: model:ir.model.fields,field_description:user_limit.field_res_partner__signup_type
+#: model:ir.model.fields,field_description:user_limit.field_res_users__signup_type
+msgid "Signup Token Type"
+msgstr ""
+
+#. module: user_limit
+#: model:res.groups,name:user_limit.groups_super_user
+msgid "Super User Group"
+msgstr "超级用户组"
+
+#. module: user_limit
+#: model:ir.model,name:user_limit.model_res_users
+msgid "User"
+msgstr "用户"
+
+#. module: user_limit
+#. odoo-python
+#: code:addons/user_limit/models/models.py:0
+#, python-format
+msgid "User creation is not allowed due to user limit."
+msgstr "由于用户数量限制，不允许创建用户。"
+
+#. module: user_limit
+#: model:ir.ui.menu,name:user_limit.menu_user_manager
+msgid "用户"
+msgstr ""
+
+#. module: user_limit
+#: model:ir.ui.menu,name:user_limit.menu_user_limit_root
+msgid "配置"
+msgstr ""
