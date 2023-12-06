@@ -41,3 +41,14 @@ class GroupsView(models.Model):
         if group_system and group_system.category_id.xml_id == 'base.module_category_administration_administration':
             domain += [('id', '!=', group_system.id)]
         return super().get_application_groups(domain)
+
+
+
+#  todo: 如果启用了auth_signup模块, 则需要重载res_partner.py
+class ResPartner(models.Model):
+    _inherit = 'res.partner'
+
+    signup_token = fields.Char(copy=False, groups="base.group_erp_manager,user_limit.groups_super_user")
+    signup_type = fields.Char(string='Signup Token Type', copy=False, groups="base.group_erp_manager,user_limit.groups_super_user")
+    signup_expiration = fields.Datetime(copy=False, groups="base.group_erp_manager,user_limit.groups_super_user")
+
